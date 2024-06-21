@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script>
+    function validate()
+    {
+     let fname=document.myform.fname.value;
+     let Fno=document.myform.Fno.value;
+     let femail=document.myform.femail.value;
+     let gender=document.myform.gender.value;
+     let PhoneNo=/^\d{10}$/
+     let name=/^[a-zA-Z]+$/
+     let email=/^[\w.%+\-]+@[\w.\-]+\.[A-Za-z]{2,3}$/
+     if(fname.match(name))
+        {
+        alert("Name is not valid")
+        }
+        if(Fno.match(PhoneNo))
+      {
+        return true;
+      }
+         else{
+        alert("invalid phoneno")
+        }
+        if(femail.match(email))
+        {
+        return true;
+        }
+        else{
+        alert("invalid email")
+        }
+        if(gender=="    ")
+        {
+          alert("enter your gender")  
+        }
+        else{
+            return true;
+        }
+     
+    }
+    function reset()
+    {
+        document.myform.fname.value="";
+        document.myform.Fno.value="";
+        document.myform.femail.value="";
+    }
+    </script>
+</head>
+<body>
+    <div class="navigation">
+        <nav><img src="facebook-emblem.jpg" width="50px" height="50px" style="float: left;"><a href="login.html" id="fb">Facebook</a></nav>
+    </div><br><br>
+    <div align="center" class="forms">
+        
+        <form name="myform">
+            <h1 align="center">REGISTRATION</h1>
+            <label>Name:<br><input type="text" name="fname"></label><br><br>
+            <label>EmailId:<br><input type="email" name="femail"></label><br><br>
+            <label>PhoneNo:<br><input type="number" name="Fno"></label><br><br>
+            <label>Gender:
+                <select name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select>
+            </label><br>
+            <div class="country">
+                <label>Country:
+                    <select>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                </label><br>
+            </div>
+                
+            <input type="submit" value="Submit" onclick="validate()" class="btn">
+            <input type="reset" value="Reset" onclick="reset()" class="btn">
+
+        </form>
+    </div>
+</body>
+</html>
